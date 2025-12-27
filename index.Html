@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portifólio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegação">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+
+        </ul>
+    </nav>
+    <main id="inicio" class="Cabeçalho">
+        <div>
+            <img src="img/WhatsApp Image 2025-12-27 at 19.31.23.jpeg" alt="Foto de Elias" class="foto-perfil">
+            <h1>Elias Junior</h1>
+            <p class="cabeçalho-sub-title">Desenvolvedor front-end Junior</p>
+        </div>
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Olá, me chamo Elias Junior e sou um desenvolvedor front-end junior. Tenho
+                experiência basica em HTML, CSS e JavaScript, e estou sempre buscando novos desafios para aprimorar
+                minhas habilidades.
+
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="img/Captura de tela 2025-12-22 210939.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-texto-projeto">
+                    <h3 class="info-projetos">tela de logati</h3>
+                    <p>tela de inicio que permite visualizar usarios de programação</p>
+                </div>
+            </div>
+            <div class="projetos-card">
+                <img src="img/Captura de tela 2025-12-24 134858.png" alt="projeto 2" class="projetos-imagem">
+                <div class="caixa-texto-projeto">
+                    <h3 class="info-projetos">Loja de milkshaikes</h3>
+                    <p class="paragrafo-projetos">Essa pagina em focada, para os amantes de milkshaikes</p>
+                </div>
+            </div>
+
+            <section id="contatos" class="contatos">
+                <h2 class="contatos-titulo">Entre em contato</h2>
+
+                <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+                    <div class="grupo-form">
+                        <input placeholder="Nome" class="campo-form" id="nome">
+                    </div>
+                    <div class="grupo-form">
+                        <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6"
+                            id="mensagem"></textarea>
+                    </div>
+                    <button type="submit" class="botao-form">Enviar whatsapp</button>
+                </form>
+            </section>
+            <script>
+
+                function enviarWhats(event) {
+
+                   event.preventDefault()
+
+                    const nome = document.getElementById('nome').value;
+                    const mensagem = document.getElementById('mensagem').value;
+                    const telefone = '5518996495509'
+
+                    const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+                    const msgFormatada = encodeURIComponent(texto)
+                    const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+ 
+                    console.log(url)
+
+                    window.open(url, '_blank')
+                }
+
+
+            </script>
+</body>
+</html>
